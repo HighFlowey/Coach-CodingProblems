@@ -2,7 +2,7 @@ local HttpService = game:GetService("HttpService")
 HttpService.HttpEnabled = true
 
 local function RequireModuleFromGithub(name: string)
-  local source = HttpService:GetAsync(`https://github.com/HighFlowey/Coach-CodingProblems/blob/main/src/{name}`, true)
+  local source = HttpService:GetAsync(`https://github.com/HighFlowey/Coach-CodingProblems/blob/main/src/{name}.luau`, true)
   local info = HttpService:JSONDecode(source)
   local code = HttpService:GetAsync(info.payload.blob.rawBlobUrl, true)
   return loadstring(code)()
