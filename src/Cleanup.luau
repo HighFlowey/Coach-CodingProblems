@@ -27,10 +27,10 @@ end
 
 function module.Run(required_userModule)
   local bindable = Instance.new("BindableEvent")
-	bindable.Parent = Memory.JunkFolder:get()
+	bindable.Parent = game
 
 	local part = Instance.new("Part")
-	part.Parent = Memory.JunkFolder:get()
+	part.Parent = game
 
 	local c0 = part.Touched:Connect(doNothing)
 	local c1 = part.TouchEnded:Connect(doNothing)
