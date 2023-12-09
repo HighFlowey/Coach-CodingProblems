@@ -8,7 +8,7 @@ end
 local function RequireModuleFromGithub(name: string)
 	local source = GetAsyncRetry(`https://github.com/HighFlowey/Coach-CodingProblems/blob/main/src/{name}.luau`, true)
 	local info = HttpService:JSONDecode(source)
-	local code = GetAsyncRetry(info.payload.blob.rawBlobUrl, false)
+	local code = GetAsyncRetry(info.payload.blob.rawBlobUrl, true)
 	return loadstring(code)()
 end
 
