@@ -13,15 +13,16 @@ local function RequireModuleFromGithub(name: string)
 end
 
 local module = {
-  {
-	Name = "Test1";
-	Description = "This is just a placeholder.";
-	Explanations = {
-		Title1 = "Do this and that";
-		Title2 = "Do that and this";
+	{
+		Name = "Test1";
+		Description = "This is just a placeholder.";
+		Explanations = {
+			Title1 = "Do this and that";
+			Title2 = "Do that and this";
+		};
+		Module = RequireModuleFromGithub("Test1");
+		Color = Color3.new(255, 255, 0);
 	};
-	Module = RequireModuleFromGithub("Test1");
-	Color = Color3.new(255, 255, 0)};
 }
 
 return module
