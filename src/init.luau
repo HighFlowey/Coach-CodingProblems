@@ -17,7 +17,7 @@ local module = {
 		Name = "Cleanup";
 		Description = "Cleanup a table of connections and instances.";
 		Explanations = {
-			Behaviour = "Return a function that: takes a table that contains objects and connections and destroys/disconnects them.";
+			Behaviour = "Return a function that takes a table that contains objects and connections and destroys/disconnects them.";
 		};
 		Module = RequireModuleFromGithub("Cleanup");
 		Color = Color3.new(255, 255, 0);
