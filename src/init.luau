@@ -1,10 +1,15 @@
 local HttpService = game:GetService("HttpService")
 
+local function GetAsyncRetry(...)
+	local success, value = pcall(HttpService.GetAsync, HttpService, ...)
+	return if success then value else GetAsyncRetry(...)
+end
+
 local function RequireModuleFromGithub(name: string)
-  local source = HttpService:GetAsync(`https://github.com/HighFlowey/Coach-CodingProblems/blob/main/src/{name}.luau`, true)
-  local info = HttpService:JSONDecode(source)
-  local code = HttpService:GetAsync(info.payload.blob.rawBlobUrl, true)
-  return loadstring(code)()
+	local source = GetAsyncRetry(`https://github.com/HighFlowey/Coach-CodingProblems/blob/main/src/{name}.luau`, true)
+	local info = HttpService:JSONDecode(source)
+	local code = GetAsyncRetry(info.payload.blob.rawBlobUrl, false)
+	return loadstring(code)()
 end
 
 local module = {
