@@ -26,7 +26,7 @@ function module.PerformTests(answer)
 end
 
 function module.Run(required_userModule)
-  local bindable = Instance.new("BindableEvent")
+	local bindable = Instance.new("BindableEvent")
 	bindable.Parent = game
 
 	local part = Instance.new("Part")
@@ -47,17 +47,17 @@ function module.Run(required_userModule)
 	}
 
 	local answer = required(cleanupTable)
-  local result = module.PerformTests(answer)
+	local result = module.PerformTests(answer)
 
-  bindable:Destroy()
+	bindable:Destroy()
 	part:Destroy()
 
 	c0:Disconnect()
-  c1:Disconnect()
+	c1:Disconnect()
 	c2:Disconnect()
 	c3:Disconnect()
 
-  return result
+	return result
 end
 
 return module
