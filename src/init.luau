@@ -23,6 +23,36 @@ local module = {
 		Module = RequireModuleFromGithub("Test1");
 		Color = Color3.new(255, 255, 0);
 	};
+	{
+		Name = "Test2";
+		Description = "This is just a placeholder.";
+		Explanations = {
+			Title1 = "Do this and that";
+			Title2 = "Do that and this";
+		};
+		Module = RequireModuleFromGithub("Test1");
+		Color = Color3.new(255, 255, 0);
+	};
+	{
+		Name = "Test3";
+		Description = "This is just a placeholder.";
+		Explanations = {
+			Title1 = "Do this and that";
+			Title2 = "Do that and this";
+		};
+		Module = RequireModuleFromGithub("Test1");
+		Color = Color3.new(255, 255, 0);
+	};
+	{
+		Name = "Test4";
+		Description = "This is just a placeholder.";
+		Explanations = {
+			Title1 = "Do this and that";
+			Title2 = "Do that and this";
+		};
+		Module = RequireModuleFromGithub("Test1");
+		Color = Color3.new(255, 255, 0);
+	};
 }
 
 return module
