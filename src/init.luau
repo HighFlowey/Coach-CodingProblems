@@ -1,5 +1,4 @@
 local HttpService = game:GetService("HttpService")
-HttpService.HttpEnabled = true
 
 local function RequireModuleFromGithub(name: string)
   local source = HttpService:GetAsync(`https://github.com/HighFlowey/Coach-CodingProblems/blob/main/src/{name}.luau`, true)
