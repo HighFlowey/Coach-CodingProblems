@@ -1,5 +1,5 @@
 local module = {}
-local c0, c1, c2, c3
+local c0, c1
 local part
 local bindable
 local cleanupTable
@@ -23,7 +23,7 @@ function module.PerformTests(required)
 			return "one of the instances inside the table is not destroyed!"
 		end
 
-		if c0.Connected or c1.Connected or c2.Connected or c3.Connected then
+		if c0.Connected or c1.Connected then
 			return "one of the connections inside the table is not disconnected!"
 		end
 
@@ -42,18 +42,14 @@ function module.Run(required)
 	part = Instance.new("Part")
 	part.Parent = game
 
-	c0 = part.Touched:Connect(doNothing)
-	c1 = part.TouchEnded:Connect(doNothing)
-	c2 = part.TouchEnded:Connect(doNothing)
-	c3 = bindable.Event:Connect(doNothing)
+	c0 = workspace.Changed:Connect(doNothing)
+	c1 = workspace.Destroying:Connect(doNothing)
 
 	cleanupTable = {
 		bindable,
 		part,
 		c0,
 		c1,
-		c2,
-		c3,
 	}
 
 	local result = module.PerformTests(required)
