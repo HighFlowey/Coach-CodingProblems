@@ -59,7 +59,7 @@ local module = {
 		Name = "String Manipulation #1",
 		Description = "Create a module that returns a function that sorts an array of strings from longest to shortest by the string length.",
 		Explanations = {
-			ExampleArgument = '{"huge", "lol", }, "GetService("ScriptEditorService")"}',
+			ExampleArgument = '{"huge", "lol", "game.Workspace = cringe", "GetService("ScriptEditorService")"}',
 			ExampleAnswer = '{"GetService("ScriptEditorService")", "game.Workspace = cringe", "huge", "lol"}',
 		},
 		Module = RequireModuleFromGithub("String_1"),
