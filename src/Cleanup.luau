@@ -13,7 +13,7 @@ function module.PerformTests(required)
 			return "module should return a function"
 		end
 
-		local answer = required
+		local answer = required()
 
 		if answer then
 			return "function shouldn't return anything!"
