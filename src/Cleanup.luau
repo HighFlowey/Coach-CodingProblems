@@ -60,14 +60,6 @@ function module.Run(required)
 
 	local result = module.PerformTests(required)
 
-	bindable:Destroy()
-	part:Destroy()
-
-	c0:Disconnect()
-	c1:Disconnect()
-	c2:Disconnect()
-	c3:Disconnect()
-
 	return result
 end
 
