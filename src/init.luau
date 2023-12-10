@@ -65,6 +65,17 @@ local module = {
 		Module = RequireModuleFromGithub("String_1"),
 		Color = Color3.fromRGB(255, 150, 0),
 	},
+	{
+		Name = "Turn seconds into readable time",
+		Description = "Create a module that returns a function that turns seconds into readable time (example: 70 -> 1:10).",
+		Explanations = {
+			Behaviour = "Module's function should turn seconds in to readable date",
+			Example = `90 -> "1:30"`,
+			Warning = "Remove decimals from the number",
+		},
+		Module = RequireModuleFromGithub("ReadableDate"),
+		Color = Color3.fromRGB(255, 150, 0),
+	},
 }
 
 return module
