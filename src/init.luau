@@ -33,6 +33,18 @@ local module = {
 		Module = RequireModuleFromGithub("OOP_1"),
 		Color = Color3.fromRGB(255, 255, 0),
 	},
+	{
+		Name = "OOP #2",
+		Description = "Create a module that creates a class by using OOP(ObjectOrientedProgramming), this class will manage cooldowns.",
+		Explanations = {
+			Behaviour = 'The module should return a table that contains a function called "new"',
+			NewFunction = 'The "new" function should return a table that has a method called "Run" and an Index/Property called Cooldown which is set to the number you get from the "new" function',
+			RunMethod = `This method should run the function it receives when the class is not on cooldown`,
+			CooldownProperty = `When this property changes the cooldown should change aswell`,
+		},
+		Module = RequireModuleFromGithub("OOP_2"),
+		Color = Color3.fromRGB(255, 200, 0),
+	},
 }
 
 return module
