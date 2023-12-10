@@ -30,7 +30,7 @@ local module = {
 			NewFunction = 'The "new" function should return a table that has a method called "Init"',
 			InitMethod = 'The "Init" method should set self.Initialized to true',
 		},
-		Module = RequireModuleFromGithub("OOP_#1"),
+		Module = RequireModuleFromGithub("OOP_1"),
 		Color = Color3.fromRGB(255, 255, 0),
 	},
 }
