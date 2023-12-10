@@ -45,6 +45,16 @@ local module = {
 		Module = RequireModuleFromGithub("OOP_2"),
 		Color = Color3.fromRGB(255, 200, 0),
 	},
+	{
+		Name = "Simple Cooldown",
+		Description = "Create a module that returns a function that gives functions cooldowns and runs them when theyre not on cooldown.",
+		Explanations = {
+			Function = "The module should return a function that takes the following arguments: (callback: function, time: number)",
+			Behaviour = `Each function should have it's own cooldown based on the time value, when the time value changes the cooldown should change aswell`,
+		},
+		Module = RequireModuleFromGithub("Cooldown"),
+		Color = Color3.fromRGB(0, 255, 0),
+	},
 }
 
 return module
