@@ -29,7 +29,7 @@ function module.PerformTests(answer)
 	return true
 end
 
-function module.Run(required_userModule)
+function module.Run(required)
 	local bindable = Instance.new("BindableEvent")
 	bindable.Parent = game
 
