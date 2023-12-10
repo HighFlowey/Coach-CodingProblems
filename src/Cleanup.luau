@@ -1,8 +1,10 @@
 local module = {}
+local c0, c1, c2, c3
+local part
+local bindable
+local cleanupTable
 
-local function doNothing()
-
-end
+local function doNothing() end
 
 function module.PerformTests(answer)
 	do
@@ -30,18 +32,18 @@ function module.PerformTests(answer)
 end
 
 function module.Run(required)
-	local bindable = Instance.new("BindableEvent")
+	bindable = Instance.new("BindableEvent")
 	bindable.Parent = game
 
-	local part = Instance.new("Part")
+	part = Instance.new("Part")
 	part.Parent = game
 
-	local c0 = part.Touched:Connect(doNothing)
-	local c1 = part.TouchEnded:Connect(doNothing)
-	local c2 = part.TouchEnded:Connect(doNothing)
-	local c3 = bindable.Event:Connect(doNothing)
+	c0 = part.Touched:Connect(doNothing)
+	c1 = part.TouchEnded:Connect(doNothing)
+	c2 = part.TouchEnded:Connect(doNothing)
+	c3 = bindable.Event:Connect(doNothing)
 
-	local cleanupTable = {
+	cleanupTable = {
 		bindable,
 		part,
 		c0,
