@@ -20,7 +20,7 @@ function module.PerformTests(required)
 		local rightAnswer = ""
 		do
 			local minutes = math.round(n / 60)
-			local seconds = math.round(n - (minutes * 60))
+			local seconds = math.round((minutes * 60) - n)
 			rightAnswer = `{minutes}:{seconds}`
 		end
 
