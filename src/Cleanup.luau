@@ -1,5 +1,9 @@
 local module = {}
 
+local function doNothing()
+
+end
+
 function module.PerformTests(answer)
 	do
 		-- * Do tests
