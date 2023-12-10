@@ -74,7 +74,7 @@ local module = {
 			Warning = "Remove decimals from the number",
 		},
 		Module = RequireModuleFromGithub("ReadableDate"),
-		Color = Color3.fromRGB(255, 150, 0),
+		Color = Color3.fromRGB(0, 255, 0),
 	},
 }
 
