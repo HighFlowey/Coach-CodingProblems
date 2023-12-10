@@ -55,6 +55,16 @@ local module = {
 		Module = RequireModuleFromGithub("Cooldown"),
 		Color = Color3.fromRGB(0, 255, 0),
 	},
+	{
+		Name = "String Manipulation #1",
+		Description = "Create a module that returns a function that sorts an array of strings from longest to shortest by the string length.",
+		Explanations = {
+			ExampleArgument = '{"huge", "lol", }, "GetService("ScriptEditorService")"}',
+			ExampleAnswer = '{"GetService("ScriptEditorService")", "game.Workspace = cringe", "huge", "lol"}',
+		},
+		Module = RequireModuleFromGithub("String_1"),
+		Color = Color3.fromRGB(255, 150, 0),
+	},
 }
 
 return module
