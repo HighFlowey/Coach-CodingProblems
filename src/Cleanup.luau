@@ -6,9 +6,15 @@ local cleanupTable
 
 local function doNothing() end
 
-function module.PerformTests(answer)
+function module.PerformTests(required)
 	do
 		-- * Do tests
+		if typeof(required) ~= "function" then
+			return "module should return a function"
+		end
+
+		local answer = required
+
 		if answer then
 			return "function shouldn't return anything!"
 		end
@@ -52,8 +58,7 @@ function module.Run(required)
 		c3,
 	}
 
-	local answer = required(cleanupTable)
-	local result = module.PerformTests(answer)
+	local result = module.PerformTests(required)
 
 	bindable:Destroy()
 	part:Destroy()
