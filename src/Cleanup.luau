@@ -20,8 +20,6 @@ function module.PerformTests(required)
 		end
 
 		if bindable.Parent or part.Parent then
-			bindable:Destroy()
-			part:Destroy()
 			return "one of the instances inside the table is not destroyed!"
 		end
 
