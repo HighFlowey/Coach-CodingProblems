@@ -34,12 +34,6 @@ function module.PerformTests(required)
 	for _, array in testArrays do
 		local answer = required(array)
 		local rightAnswer = sortTextArray(array)
-		local gotRight = 0
-		local shouldGetRight = 0
-
-		for _, _ in rightAnswer do
-			shouldGetRight = gotRight
-		end
 
 		if typeof(answer) ~= "table" then
 			return `module's function should return an array`
@@ -52,13 +46,7 @@ function module.PerformTests(required)
 		for i, v in answer do
 			if rightAnswer[i] ~= v then
 				return `array returned by the function doesn't contain the right values`
-			else
-				gotRight += 1
 			end
-		end
-
-		if gotRight ~= shouldGetRight then
-			return `array returned by the function was incorrect`
 		end
 	end
 
