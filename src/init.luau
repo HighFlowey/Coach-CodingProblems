@@ -62,6 +62,15 @@ local module = {
 		Module = "ReadableDate",
 		Color = Color3.fromRGB(0, 255, 0),
 	},
+	{
+		Name = "String Manipulation #2",
+		Description = "Take a script's sourecode and get all the variables from it and store it into a table.",
+		Explanations = {
+			Example = `"local a = true local b = 100" -> {'{a = "true", b = "100"}'}`,
+		},
+		Module = "String_2",
+		Color = Color3.fromRGB(255, 150, 0),
+	},
 }
 
 return module
