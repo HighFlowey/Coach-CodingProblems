@@ -27,8 +27,6 @@ function module.PerformTests(required)
 			rightAnswer[i] = v
 		end
 
-		print(answer, rightAnswer)
-
 		if typeof(answer) ~= "table" then
 			return "returned value should be a table!"
 		end
