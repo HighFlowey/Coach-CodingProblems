@@ -1,9 +1,7 @@
 -- Testing a new type of coding problem.
-
 local module = {}
 
 -- Template.Start
-
 local replaceUnderscoreWithSpace = function(str: string)
 	-- replace "_" with " ".
 	return str:gsub(str, "_", " ")
