@@ -27,15 +27,15 @@ function module.PerformTests(required)
 			rightAnswer[i] = v
 		end
 
-		if typeof(rightAnswer) ~= "table" then
+		if typeof(answer) ~= "table" then
 			return "returned value should be a table!"
 		end
 
-		if next(rightAnswer) == nil then
+		if next(answer) == nil then
 			return "returned table can't be empty!"
 		end
 
-		for i, v in rightAnswer do
+		for i, v in answer do
 			if rightAnswer[i] and rightAnswer[i] == v then
 				continue
 			end
