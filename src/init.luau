@@ -53,7 +53,7 @@ local module = {
 	},
 	{
 		Name = "Turn seconds into readable time",
-		Description = "Create a module that returns a function that turns seconds into readable time (example: 70 -> 1:10).",
+		Description = "Create a module that returns a function that turns seconds into readable time (example: 70 -> 1:10, 5 -> 0:05).",
 		Explanations = {
 			Behaviour = "Module's function should turn seconds in to readable date",
 			Example = `90 -> "1:30"`,

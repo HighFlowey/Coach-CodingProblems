@@ -19,9 +19,9 @@ function module.PerformTests(required)
 		local answer = required(n)
 		local rightAnswer = ""
 		do
-			local minutes = math.round(n / 60)
-			local seconds = math.round((minutes * 60) - n)
-			rightAnswer = `{minutes}:{seconds}`
+			local SS = n % 60
+			local MM = (n - SS) / 60
+			rightAnswer = MM .. ":" .. (10 > SS and "0" .. SS or SS)
 		end
 
 		if typeof(answer) ~= "string" then
