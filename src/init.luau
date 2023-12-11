@@ -71,6 +71,13 @@ local module = {
 		Module = "String_2",
 		Color = Color3.fromRGB(255, 150, 0),
 	},
+	{
+		Name = "String Manipulation #3",
+		Description = `Take a string and whenever a "_" appears, replace it with " " (space).`,
+		Explanations = {},
+		Module = "String_3",
+		Color = Color3.fromRGB(0, 255, 0),
+	},
 }
 
 return module
