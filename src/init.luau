@@ -1,17 +1,3 @@
-local HttpService = game:GetService("HttpService")
-
-local function GetAsyncRetry(...)
-	local success, value = pcall(HttpService.GetAsync, HttpService, ...)
-	return if success then value else GetAsyncRetry(...)
-end
-
-local function RequireModuleFromGithub(name: string)
-	local source = GetAsyncRetry(`https://github.com/HighFlowey/Coach-CodingProblems/blob/main/src/{name}.luau`, true)
-	local info = HttpService:JSONDecode(source)
-	local code = GetAsyncRetry(info.payload.blob.rawBlobUrl, true)
-	return loadstring(code)()
-end
-
 local module = {
 	{
 		Name = "Cleanup",
@@ -19,7 +5,7 @@ local module = {
 		Explanations = {
 			Behaviour = "Return a function that takes a table that contains objects and connections and destroys/disconnects them.",
 		},
-		Module = RequireModuleFromGithub("Cleanup"),
+		Module = "Cleanup",
 		Color = Color3.fromRGB(255, 255, 0),
 	},
 	{
@@ -30,7 +16,7 @@ local module = {
 			NewFunction = 'The "new" function should return a table that has a method called "Init"',
 			InitMethod = 'The "Init" method should set self.Initialized to true',
 		},
-		Module = RequireModuleFromGithub("OOP_1"),
+		Module = "OOP_1",
 		Color = Color3.fromRGB(255, 255, 0),
 	},
 	{
@@ -42,7 +28,7 @@ local module = {
 			RunMethod = `This method should run the function it receives when the class is not on cooldown`,
 			CooldownProperty = `When this property changes the cooldown should change aswell`,
 		},
-		Module = RequireModuleFromGithub("OOP_2"),
+		Module = "OOP_2",
 		Color = Color3.fromRGB(255, 200, 0),
 	},
 	{
@@ -52,7 +38,7 @@ local module = {
 			Function = "The module should return a function that takes the following arguments: (callback: function, time: number)",
 			Behaviour = `Each function should have it's own cooldown based on the time value, when the time value changes the cooldown should change aswell`,
 		},
-		Module = RequireModuleFromGithub("Cooldown"),
+		Module = "Cooldown",
 		Color = Color3.fromRGB(0, 255, 0),
 	},
 	{
@@ -62,7 +48,7 @@ local module = {
 			ExampleArgument = '{"huge", "lol", "game.Workspace = cringe", "GetService("ScriptEditorService")"}',
 			ExampleAnswer = '{"GetService("ScriptEditorService")", "game.Workspace = cringe", "huge", "lol"}',
 		},
-		Module = RequireModuleFromGithub("String_1"),
+		Module = "String_1",
 		Color = Color3.fromRGB(255, 150, 0),
 	},
 	{
@@ -73,7 +59,7 @@ local module = {
 			Example = `90 -> "1:30"`,
 			Warning = "Remove decimals from the number",
 		},
-		Module = RequireModuleFromGithub("ReadableDate"),
+		Module = "ReadableDate",
 		Color = Color3.fromRGB(0, 255, 0),
 	},
 }
