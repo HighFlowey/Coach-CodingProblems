@@ -30,7 +30,7 @@ function module.PerformTests(required)
 		end
 	end)
 
-	task.wait()
+	task.wait(0.5)
 	c:Disconnect()
 
 	if log ~= true then
@@ -47,7 +47,7 @@ function module.PerformTests(required)
 		end
 	end)
 
-	task.wait()
+	task.wait(0.5)
 	c:Disconnect()
 
 	if log == true then
@@ -64,7 +64,7 @@ function module.PerformTests(required)
 		end
 	end)
 
-	task.wait()
+	task.wait(0.5)
 	c:Disconnect()
 
 	if log ~= true then
