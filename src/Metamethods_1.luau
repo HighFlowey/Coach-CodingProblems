@@ -25,6 +25,7 @@ function module.PerformTests(required)
 	required.a = true
 
 	c = LogService.MessageOut:Connect(function(msg)
+		print(msg, shouldPrint)
 		if msg == shouldPrint then
 			log = true
 		end
