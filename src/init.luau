@@ -85,7 +85,7 @@ local module = {
 			Hint = `Use this metamethod: __newindex`,
 		},
 		Module = "Metamethods_1",
-		Color = Color3.fromRGB(0, 255, 0),
+		Color = Color3.fromRGB(255, 100, 0),
 	},
 }
 
