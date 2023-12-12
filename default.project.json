@@ -1,0 +1,11 @@
+{
+  "name": "Coach_CodingProblems",
+  "tree": {
+    "$className": "DataModel",
+    "ServerStorage": {
+      "CodingProblems": {
+        "$path": "src"
+      }
+    }
+  }
+}
