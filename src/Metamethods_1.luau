@@ -24,6 +24,7 @@ function module.PerformTests(required)
 	local c, log, shouldPrint = nil, false, printReference("a", true)
 	required.a = true
 
+	print("Debugging Metamethods #1")
 	c = LogService.MessageOut:Connect(function(msg)
 		print(msg, shouldPrint)
 		if msg == shouldPrint then
