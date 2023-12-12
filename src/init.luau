@@ -78,6 +78,15 @@ local module = {
 		Module = "String_3",
 		Color = Color3.fromRGB(0, 255, 0),
 	},
+	{
+		Name = "Metamethods #1",
+		Description = `Print whenever a new index get's added to the table returned by the module.`,
+		Explanations = {
+			Hint = `Use this metamethod: __newindex`,
+		},
+		Module = "Metamethods_1",
+		Color = Color3.fromRGB(0, 255, 0),
+	},
 }
 
 return module
