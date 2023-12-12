@@ -37,6 +37,10 @@ function module.PerformTests(required)
 		return `didn't print: {shouldPrint}`
 	end
 
+	if required.a ~= true then
+		return `couldn't find new index in table, did you forget to use rawset()?`
+	end
+
 	-- Test 2
 	c, log, shouldPrint = nil, false, printReference("a", 100)
 	required.a = 100
@@ -69,6 +73,10 @@ function module.PerformTests(required)
 
 	if log ~= true then
 		return `didn't print: {shouldPrint}`
+	end
+
+	if required.b ~= 25 then
+		return `couldn't find new index in table, did you forget to use rawset()?`
 	end
 
 	-- Passed all the tests
