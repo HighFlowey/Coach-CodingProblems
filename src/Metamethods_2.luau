@@ -1,18 +1,18 @@
 local LogService = game:GetService("LogService")
 local module = {}
-local index, value
+local index, oldValue, newValue
 
 -- Template.Start
 local myTable = {}
 
--- print this whenever an index gets added to "myTable"
-print(`{index}:{value} got added to myTable`)
+-- print this whenever an index gets added/changed in "myTable"
+print(`{index} was {oldValue} and now it's {newValue}`)
 
 -- Template.Finish
 -- Return:myTable
 
-local function printReference(i, v)
-	return `{i}:{v} got added to myTable`
+local function printReference(i, ov, nv)
+	return `{i} was {ov} and now it's {nv}`
 end
 
 function module.PerformTests(required)
@@ -21,7 +21,7 @@ function module.PerformTests(required)
 	end
 
 	-- Test 1
-	local c, log, shouldPrint = nil, false, printReference("a", true)
+	local c, log, shouldPrint = nil, false, printReference("a", nil, true)
 	required.a = true
 
 	c = LogService.MessageOut:Connect(function(msg)
@@ -38,11 +38,11 @@ function module.PerformTests(required)
 	end
 
 	if required.a ~= true then
-		return `couldn't find new index in table, did you forget to use rawset()?`
+		return `couldn't find new index in table, did you forget to add it to the proxy table?`
 	end
 
 	-- Test 2
-	c, log, shouldPrint = nil, false, printReference("a", 100)
+	c, log, shouldPrint = nil, false, printReference("a", true, 100)
 	required.a = 100
 
 	c = LogService.MessageOut:Connect(function(msg)
@@ -54,12 +54,16 @@ function module.PerformTests(required)
 	task.wait(0.5)
 	c:Disconnect()
 
-	if log == true then
-		return `should't print: {shouldPrint}, because index already existed`
+	if log ~= true then
+		return `didn't print: {shouldPrint}`
+	end
+
+	if required.a ~= 100 then
+		return `myTable.a didn't get set to the new value which is {100} and stayed as the old value which is {required.a}`
 	end
 
 	-- Test 3
-	c, log, shouldPrint = nil, false, printReference("b", 25)
+	c, log, shouldPrint = nil, false, printReference("b", nil, 25)
 	required.b = 25
 
 	c = LogService.MessageOut:Connect(function(msg)
@@ -76,7 +80,7 @@ function module.PerformTests(required)
 	end
 
 	if required.b ~= 25 then
-		return `couldn't find new index in table, did you forget to use rawset()?`
+		return `couldn't find new index in table, did you forget to add it to the proxy table?`
 	end
 
 	-- Passed all the tests

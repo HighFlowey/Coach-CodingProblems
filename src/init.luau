@@ -87,6 +87,15 @@ local module = {
 		Module = "Metamethods_1",
 		Color = Color3.fromRGB(255, 100, 0),
 	},
+	{
+		Name = "Metamethods #2",
+		Description = `Print whenever a table's index gets updated.`,
+		Explanations = {
+			Hint = `Use this metamethod: __newindex, and use a proxy table.`,
+		},
+		Module = "Metamethods_1",
+		Color = Color3.fromRGB(255, 100, 0),
+	},
 }
 
 return module
