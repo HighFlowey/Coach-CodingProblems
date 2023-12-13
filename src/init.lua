@@ -96,6 +96,16 @@ local module = {
 		Module = "Metamethods_1",
 		Color = Color3.fromRGB(255, 100, 0),
 	},
+	{
+		Name = "Tables #1",
+		Description = `Combine 2 tables into 1.`,
+		Explanations = {
+			ExampleArgument = "table0 = {500, 800} | table2 = {true, 946}",
+			ExampleAnswer = "newTable = {[500] = true, [800] = 946}",
+		},
+		Module = "Tables_1",
+		Color = Color3.fromRGB(0, 255, 0),
+	},
 }
 
 return module
