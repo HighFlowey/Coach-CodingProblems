@@ -93,7 +93,7 @@ local module = {
 		Explanations = {
 			Hint = `Use this metamethod: __newindex, and use a proxy table.`,
 		},
-		Module = "Metamethods_1",
+		Module = "Metamethods_2",
 		Color = Color3.fromRGB(255, 100, 0),
 	},
 	{
